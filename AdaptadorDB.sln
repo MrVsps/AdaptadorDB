@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptadorDB", "AdaptadorDB.csproj", "{5FFB0B4A-ACE8-4B5F-8759-DED83E24E50E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FFB0B4A-ACE8-4B5F-8759-DED83E24E50E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFB0B4A-ACE8-4B5F-8759-DED83E24E50E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFB0B4A-ACE8-4B5F-8759-DED83E24E50E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFB0B4A-ACE8-4B5F-8759-DED83E24E50E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF51CA4C-1608-4E07-992C-27C2230B00D9}
+	EndGlobalSection
+EndGlobal
