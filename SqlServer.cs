@@ -21,7 +21,7 @@ namespace AdaptadorDB
             List<ConsumoCS> lista = new List<ConsumoCS>();
             using (SqlConnection oconexion = new SqlConnection("Data Source=(local);Initial Catalog=ConsumoEmpleado;Integrated Security=True"))
             {
-                oconexion.Open();
+                
                 try
                 {
                     string query = "exec ObtenerConsumoCS;";
@@ -73,7 +73,7 @@ namespace AdaptadorDB
             List<EmpleadoCs> lista = new List<EmpleadoCs>();
             using (SqlConnection oconexion = new SqlConnection("Data Source=(local);Initial Catalog=ConsumoEmpleado;Integrated Security=True"))
             {
-                oconexion.Open();
+               
                 {
                     try
                     {
