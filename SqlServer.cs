@@ -123,7 +123,7 @@ namespace AdaptadorDB
     class listaruEmpleado
     {
         private SqlServer _queryEmpleado = new SqlServer();
-        public List<Empleado> Listar()
+        public List<EmpleadoCs> Listar()
         {
             return _queryEmpleado.Listar();
         }
