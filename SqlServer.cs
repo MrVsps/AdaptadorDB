@@ -53,7 +53,7 @@ namespace AdaptadorDB
         }
 
 
-        internal class Empleado
+        internal class EmpleadoCs
         {
             public int IdEmpleado { get; set; }
             public string NumeroDocumento { get; set; }
@@ -68,9 +68,9 @@ namespace AdaptadorDB
         }
 
 
-        public List<Empleado> Listar()
+        public List<EmpleadoCs> Listar()
         {
-            List<Empleado> lista = new List<Empleado>();
+            List<EmpleadoCs> lista = new List<EmpleadoCs>();
             using (SqlConnection oconexion = new SqlConnection("Data Source=(local);Initial Catalog=ConsumoEmpleado;Integrated Security=True"))
             {
                 oconexion.Open();
@@ -85,7 +85,7 @@ namespace AdaptadorDB
                         {
                             while (reader.Read())
                             {
-                                lista.Add(new Empleado
+                                lista.Add(new EmpleadoCs
                                 {
                                     IdEmpleado = Convert.ToInt32(reader["IdEmpleado"]),
                                     NumeroDocumento = reader["NumeroDocumento"].ToString(),
@@ -101,7 +101,7 @@ namespace AdaptadorDB
                     }
                     catch (Exception ex)
                     {
-                        lista = new List<Empleado>();
+                        lista = new List<EmpleadoCs>();
 
                     }
                     oconexion.Close();
