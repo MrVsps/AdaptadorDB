@@ -109,7 +109,40 @@ namespace AdaptadorDB
                 return lista;
             }
         }
+        public void InsertarEmpleado(string numeroDocumento, string nombreCompleto, string zonaDeTrabajo, int consumos, string Ima, bool estado, DateTime hoy)
+        {
 
+            using (SqlConnection oconexion = new SqlConnection("Data Source=(local);Initial Catalog=ConsumoEmpleado;Integrated Security=True"))
+            {
+                oconexion.Open();
+                SqlCommand command = oconexion.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "InsertarEmpleado";
+
+                command.Parameters.AddWithValue("@NumeroDocumento", numeroDocumento);
+                command.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
+                command.Parameters.AddWithValue("@ZonaDeTrabajo", zonaDeTrabajo);
+                command.Parameters.AddWithValue("@NumeroConsumos", consumos);
+                command.Parameters.AddWithValue("@Imagen", Ima);
+                command.Parameters.AddWithValue("@Estado", estado);
+                command.Parameters.AddWithValue("@FechaRegistro", hoy);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void AgregarConsumoCS(int idempleado, string tipoConsumo, DateTime fechaRegistro)
+        {
+            using (SqlConnection oconexion = new SqlConnection("Data Source=(local);Initial Catalog=ConsumoEmpleado;Integrated Security=True"))
+            {
+                oconexion.Open();
+                SqlCommand command = oconexion.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "AgregarConsumoCS";  // Asegúrate de que este nombre coincida con el procedimiento almacenado
+                command.Parameters.AddWithValue("@IdEmpleado", idempleado);
+                command.Parameters.AddWithValue("@TipoConsumo", tipoConsumo);
+                command.Parameters.AddWithValue("@FechaRegistro", fechaRegistro);
+                command.ExecuteNonQuery();
+            }
+        }
     }
     class ListarConsumoCS
     {
@@ -128,4 +161,5 @@ namespace AdaptadorDB
             return _queryEmpleado.Listar();
         }
     }
+
 }
